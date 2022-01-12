@@ -1,10 +1,10 @@
 module.exports = [{
-    name: "eval",
-    description: "Evaluate de códigos para Desenvolvedores",
-    category: "Desenvolvedor",
-    usage: "eval <code>",
+    name: "jseval",
+    description: "Evaluate de códigos em JavaScript para Desenvolvedores",
+    category: "Desenvolvedores",
+    usage: "jseval <code>",
     perms: "Este comando solicita a permissão de Desenvolvedor.",
-    aliases: ["e", "ev"],
+    aliases: ["jse", "jsev"],
     code: `
 $if[$isNumber[$message]==true]
 $reactionCollector[$splitText[1];$authorID;5m;❌;exeval;yes]
@@ -18,9 +18,9 @@ $message
     
 **<-** » Saída
 \`\`\`js
-$eval[$message;yes]
+$djsEval[$message;yes]
+$error
 \`\`\`}{footer:Eval -・- $username[$authorID]:$authorAvatar};yes]; ]
-  $suppressErrors
   
 $elseif[$isNumber[$message]==false]
 $reactionCollector[$splitText[1];$authorID;5m;❌;exeval;yes]
@@ -35,13 +35,13 @@ $message
 **<-** » Saída
 \`\`\`js
 $eval[$message;yes]
+$error
 \`\`\`}{footer:Eval -・- $username[$authorID]:$authorAvatar};yes]; ]
-$suppressErrors
 $endelseif
 $endif
 $argsCheck[>1;<@$authorID>{description::no_entry_sign: **» Erro!**
   <:mt_ar:912044933626626088>╰ <@$authorID>, Digite algo para inspecionar.}{color: #ff0000}]
-  $onlyForIDs[424931675009712128;417067105897414667;922465403920338944;<@authorID>{description::no_entry_sign: **» Erro!**
+  $onlyForIDs[424931675009712128;417067105897414667;922465403920338944;<@$authorID>{description::no_entry_sign: **» Erro!**
   <:mt_ar:912044933626626088>╰ <@$authorID>, Apenas meus desenvolvedores pode executar este comando!}{color: #ff0000}]
   $onlyIf[$getGlobalUserVar[bl;$authorID]==no;<@$authorID>{color:#2f3136}{description::no_entry_sign: » Blacklist
   <:mt_ar:912044933626626088>╰ <@$authorID>, Você está na minha Blacklist e não pode executar meus comandos!}{delete:15s}]

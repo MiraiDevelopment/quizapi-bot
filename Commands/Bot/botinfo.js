@@ -54,7 +54,7 @@ $editMessage[$message[1];{thumbnail:$userAvatar[$clientID]}{description:
 **</>** » Criadores
 <:mt_ar:912044933626626088>╰ \`$username[424931675009712128]#$discriminator[424931675009712128]\` | \`424931675009712128\` | [GitHub - GR](https://github.com/guihrib)
 <:mt_ar:912044933626626088>╰ \`$username[417067105897414667]#$discriminator[417067105897414667]\` | \`417067105897414667\` | [GitHub - Krul](https://github.com/KrulDev)
-<:mt_ar:912044933626626088>╰ \`$username[922465403920338944]#$discriminator[922465403920338944]\` | \`922465403920338944\` | [GitHub - ! yScypt3r'](https://github.com/Scypt3r)}
+<:mt_ar:912044933626626088>╰ \`$replaceText[$replaceText[$username[922465403920338944]; ;];!;]#$discriminator[922465403920338944]\` | \`922465403920338944\` | [GitHub - ! yScypt3r'](https://github.com/Scypt3r)}
 {footer:Solicitado por $username:$authorAvatar}{color: $getVar[color]}]
 `
 }, {

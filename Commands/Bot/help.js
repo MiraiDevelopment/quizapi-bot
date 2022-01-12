@@ -9,7 +9,7 @@ module.exports = ({
 $reply[$messageID;{author: Minha lista de comandos:$authorAvatar}
 {thumbnail: $userAvatar[$clientID]}
 {description: \`\`\`
-Ao total, eu tenho 13 comandos. Meus comandos básicos para uso, se encontram abaixo dividos em suas devidas categorias:
+Ao total, eu tenho 14 comandos. Meus comandos básicos para uso, se encontram abaixo dividos em suas devidas categorias:
 \`\`\`
 \`💡\` __Bot:__(\`7\`)
 \`sobre\`・\`help\`・\`botinfo\`・\`ping\`・\`setprefixo\`・\`status\`・\`versão\`
@@ -18,7 +18,7 @@ Ao total, eu tenho 13 comandos. Meus comandos básicos para uso, se encontram ab
 \`afk\`・\`avatar\`・\`commandinfo\`・\`serverinfo\`
 }
 {color: $getVar[color]}
-{footer: © 2021 Quiz Api. Todos os direitos reservados.:$userAvatar[$clientID]};yes]
+{footer: © 2021-2022 Quiz Api. Todos os direitos reservados.:$userAvatar[$clientID]};yes]
 
 $onlyIf[$getGlobalUserVar[bl;$authorID]==no;<@$authorID>{color:$getVar[color]}{description::no_entry_sign: » Blacklist
 <:mt_ar:912044933626626088>╰ <@$authorID>, Você está na minha Blacklist e não pode executar meus comandos!}{delete:15s}]

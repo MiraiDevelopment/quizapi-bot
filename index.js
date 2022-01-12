@@ -29,7 +29,7 @@ const firebase = Aoifb.create({
 // Configurando o Client da Aoi.js
 const bot = new Aoijs.Bot({
     mobilePlatform: false,
-    intents: "all",
+    intents: ["GUILDS", "GUILD_MESSAGES"],
     token: process.env.token,
     prefix: ["$getServerVar[prefix]", "<@917962601923760139> ", "<@!917962601923760139> "],
     database: firebase,
