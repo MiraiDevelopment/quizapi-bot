@@ -34,7 +34,7 @@ $message
     
 **<-** » Saída
 \`\`\`js
-$eval[$message;yes]
+$djsEval[$message;yes]
 $error
 \`\`\`}{footer:Eval -・- $username[$authorID]:$authorAvatar};yes]; ]
 $endelseif
