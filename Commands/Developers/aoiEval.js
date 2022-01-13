@@ -3,7 +3,7 @@ module.exports = [{
     description: "Evaluate de códigos em Aoi.js para Desenvolvedores",
     category: "Desenvolvedores",
     usage: "aoieval <code>",
-    perms: "Este comando solicita a permissão de Desenvolvedores.",
+    perms: "Este comando solicita a permissão de Desenvolvedor.",
     aliases: ["aoie", "aoiev"],
     code: `
 $if[$isNumber[$message]==true]
@@ -19,7 +19,7 @@ $message
 **<-** » Saída
 \`\`\`js
 $eval[$message;yes]
-$supressErrors
+$suppressErrors
 \`\`\`}{footer:Eval -・- $username[$authorID]:$authorAvatar};yes]; ]
   
 $elseif[$isNumber[$message]==false]
@@ -35,7 +35,7 @@ $message
 **<-** » Saída
 \`\`\`js
 $eval[$message;yes]
-$supressErrors
+$suppressErrors
 \`\`\`}{footer:Eval -・- $username[$authorID]:$authorAvatar};yes]; ]
 $endelseif
 $endif
@@ -51,6 +51,7 @@ $argsCheck[>1;<@$authorID>{description::no_entry_sign: **» Erro!**
     name: 'exeval',
     code: `
 $clear[1]
+$deleteCommand
 $wait[3s]
 $editMessage[$message[1];{description::no_entry_sign: **» Executado!**
   <:mt_ar:912044933626626088>╰ <@$authorID>, Eval encerrado}{color: #ff0000}

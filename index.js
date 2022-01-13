@@ -13,7 +13,7 @@ app.listen(process.env.PORT);
 const Aoijs = require("aoi.js")
 
 // Configurando a Database
-const Aoifb = require("aoijs.firebase")
+const Aoifb = require("aoi.fb")
 
 const firebase = Aoifb.create({
     apiKey: process.env.apiKey,
@@ -90,3 +90,11 @@ $sendMessage[😉・**$username[$authorID]**, seu **modo AFK** foi desativado. S
 $onlyIf[$checkContains[$message[1];afk;off;ausente]==false;]
 $endif`
 })
+
+bot.client.questionsCount = 0
+bot.client.questionsCount++
+
+bot.client.getUserBanner = async function getUserBanner(message) {
+    const user = await bot.client.api.users(message).get();
+    return user.banner ? `https://cdn.discordapp.com/banners/${message}/${user.banner}?size=4096` : null;
+}

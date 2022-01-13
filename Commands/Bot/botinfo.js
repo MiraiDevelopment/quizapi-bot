@@ -17,15 +17,15 @@ $textSplit[$sendMessage[{thumbnail:$userAvatar[$clientID]}{description:
 <:mt_ar:912044933626626088>╰ ID \`[ $clientID ]\`
 
 📝 **» Dados de Armazenamento e Velocidade**
-<:mt_ar:912044933626626088>╰ Banco de Dados \`[ Firebase ]\`
-<:mt_ar:912044933626626088>╰ Hospedagem \`[ Heroku ]\`
+<:mt_ar:912044933626626088>╰ Banco de Dados \`[ Aoi.fb ]\`
+<:mt_ar:912044933626626088>╰ Hospedagem \`[ Replit ]\`
 <:mt_ar:912044933626626088>╰ Informações da Memória:
 <:mt_ar:912044933626626088><:mt_ar:912044933626626088>╰ RAM: \`[ $ramMB/$replaceText[$abbreviate[$maxRam];K;GB;-1] ]\`
 <:mt_ar:912044933626626088><:mt_ar:912044933626626088>╰ Armazenamento: \`[ $djsEval[process.memoryUsage().rss / 1024 / 1024;yes]MB ]\`
 <:mt_ar:912044933626626088>╰ Informações da CPU:
 <:mt_ar:912044933626626088><:mt_ar:912044933626626088>╰ Uso: \`[ $cpu% ]\`
 <:mt_ar:912044933626626088><:mt_ar:912044933626626088>╰ Modelo: \`[ $replaceText[$replaceText[$djsEval[require ('os').cpus()[0].model;yes];linux;Linux];windows;Windows] ]\`
-<:mt_ar:912044933626626088><:mt_ar:912044933626626088>╰ Plataforma: \`[ $djsEval[require ('os').platform();yes] ]\`
+<:mt_ar:912044933626626088><:mt_ar:912044933626626088>╰ Plataforma: \`[ $replaceText[$djsEval[require('os').platform();yes];linux;Linux] ]\`
 
 👨‍💻 **» Fui feito em**
 <:mt_ar:912044933626626088>╰ [Aoi.js](https://aoi.js.org/) na linguagem [JavaScript](https://developer.mozilla.org/pt-BR/docs/orphaned/Web/JavaScript) usando [Node.js](https://nodejs.org/pt-br/about/)
@@ -71,15 +71,15 @@ $editMessage[$message[1];{thumbnail:$userAvatar[$clientID]}{description:
 <:mt_ar:912044933626626088>╰ ID \`[ $clientID ]\`
 
 📝 **» Dados de Armazenamento e Velocidade**
-<:mt_ar:912044933626626088>╰ Banco de Dados \`[ Firebase ]\`
-<:mt_ar:912044933626626088>╰ Hospedagem \`[ Heroku ]\`
+<:mt_ar:912044933626626088>╰ Banco de Dados \`[ Aoi.fb ]\`
+<:mt_ar:912044933626626088>╰ Hospedagem \`[ Replit ]\`
 <:mt_ar:912044933626626088>╰ Informações da Memória:
 <:mt_ar:912044933626626088><:mt_ar:912044933626626088>╰ RAM: \`[ $ramMB/$replaceText[$abbreviate[$maxRam];K;GB;-1] ]\`
 <:mt_ar:912044933626626088><:mt_ar:912044933626626088>╰ Armazenamento: \`[ $djsEval[process.memoryUsage().rss / 1024 / 1024;yes]MB ]\`
 <:mt_ar:912044933626626088>╰ Informações da CPU:
 <:mt_ar:912044933626626088><:mt_ar:912044933626626088>╰ Uso: \`[ $cpu% ]\`
 <:mt_ar:912044933626626088><:mt_ar:912044933626626088>╰ Modelo: \`[ $replaceText[$replaceText[$djsEval[require ('os').cpus()[0].model;yes];linux;Linux];windows;Windows] ]\`
-<:mt_ar:912044933626626088><:mt_ar:912044933626626088>╰ Plataforma: \`[ $djsEval[require ('os').platform();yes] ]\`
+<:mt_ar:912044933626626088><:mt_ar:912044933626626088>╰ Plataforma: \`[ $replaceText[$djsEval[require('os').platform();yes];linux;Linux] ]\`
 
 👨‍💻 **» Fui feito em**
 <:mt_ar:912044933626626088>╰ [Aoi.js](https://aoi.js.org/) na linguagem [JavaScript](https://developer.mozilla.org/pt-BR/docs/orphaned/Web/JavaScript) usando [Node.js](https://nodejs.org/pt-br/about/)

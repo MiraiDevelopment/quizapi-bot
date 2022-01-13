@@ -18,7 +18,7 @@ $message
     
 **<-** » Saída
 \`\`\`js
-$djsEval[$message;yes]
+$replaceText[$djsEval[$message;yes];#SEMI#;\#SEMI#]
 $error
 \`\`\`}{footer:Eval -・- $username[$authorID]:$authorAvatar};yes]; ]
   
@@ -34,7 +34,7 @@ $message
     
 **<-** » Saída
 \`\`\`js
-$djsEval[$message;yes]
+$replaceText[$djsEval[$message;yes];#SEMI#;\#SEMI#]
 $error
 \`\`\`}{footer:Eval -・- $username[$authorID]:$authorAvatar};yes]; ]
 $endelseif
@@ -51,6 +51,7 @@ $argsCheck[>1;<@$authorID>{description::no_entry_sign: **» Erro!**
     name: 'exeval',
     code: `
 $clear[1]
+$deleteCommand
 $wait[3s]
 $editMessage[$message[1];{description::no_entry_sign: **» Executado!**
   <:mt_ar:912044933626626088>╰ <@$authorID>, Eval encerrado}{color: #ff0000}
