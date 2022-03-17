@@ -1,55 +1,38 @@
 {
   "name": "quizapi-bot",
   "version": "1.0.8",
-  "description": "Uma api de questões e respostas para seu bot do Discord 100% em português e super fácil de usar.",
+  "description": "Uma API de Questões e Respostas para seu bot do Discord e WebSite, 100% em português e fácil de usar",
   "main": "index.js",
   "scripts": {
     "start": "node ."
   },
   "engines": {
     "node": "17.4.0",
-    "npm": "7.0.0"
+    "npm": "8.3.1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Quiz-Api/QuizApiBot.git"
+    "url": "git+https://github.com/MiraiDevelopment/quizapi-bot"
   },
-  "keywords": [
-    "quiz",
-    "api",
-    "quizapi",
-    "botdiscord",
-    "djs",
-    "discordjs",
-    "aoijs",
-    "questions"
-  ],
   "author": "GR",
-  "license": "Apache-2.0 License",
-  "bugs": {
-    "url": "https://github.com/Quiz-Api/QuizApiBot/issues"
-  },
-  "homepage": "https://github.com/Quiz-Api/QuizApiBot#readme",
   "dependencies": {
     "@akarui/aoi.music": "git+https://github.com/akaruidevelopment/music.git#main",
-    "@discordjs/opus": "^0.4.0",
-    "@discordjs/voice": "^0.6.0",
-    "aoi.fb": "5.6.0",
-    "aoi.js": "^5.1.0",
+    "@discordjs/opus": "0.7.0",
+    "@discordjs/voice": "0.8.0",
+    "aoi.fb": "^5.6.0",
+    "aoi.js": "5.1.0",
+    "aoi.js-panel": "^1.4.1",
     "axios": "0.24.0",
     "discord-together": "1.1.62",
     "discord.js": "^13.6.0",
-    "dotenv": "^14.2.0",
-    "express": "^4.17.1",
-    "firebase": "^8.0.0",
-    "fs": "0.0.1-security",
+    "dotenv": "^15.0.0",
+    "express": "^4.17.2",
+    "firebase": "^9.6.5",
     "ms": "^2.1.3",
     "node": "17.4.0",
-    "node-fetch": "^2.6.1",
-    "opusscript": "^0.0.7",
-    "raw-body": "^2.4.1",
-    "sqlite3": "^5.0.2",
-    "ws": "^7.5.3",
-    "ytdl-core": "4.9.2"
+    "node-fetch": "^3.2.0",
+    "opusscript": "^0.0.8",
+    "ws": "^8.4.2",
+    "ytdl-core": "4.10.0"
   }
 }
