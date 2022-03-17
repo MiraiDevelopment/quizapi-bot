@@ -9,6 +9,7 @@ module.exports = (bot) => {
         afk: "disabled",
         motivoAfk: "não foi passado o motivo 😕",
         idDelete: "",
+        evalMsg: "",
         lastQuestion: "",
         lastCategory: ""
       

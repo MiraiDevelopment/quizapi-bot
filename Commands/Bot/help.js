@@ -6,23 +6,18 @@ module.exports = ({
     usage: "help",
     aliases: ["h","ajuda","cmds","comandos","commands"],
     code: `
-$reply[$messageID;{author: Minha lista de comandos:$authorAvatar}
-{thumbnail: $userAvatar[$clientID]}
-{description: \`\`\`
-Ao total, eu tenho 14 comandos. Meus comandos básicos para uso, se encontram abaixo dividos em suas devidas categorias:
+$author[1;Minha lista de comandos;$authorAvatar]
+$thumbnail[1;$userAvatar[$clientID]]
+$description[1;\`\`\`
+Ao total, eu tenho 11 comandos. Meus comandos básicos para uso, se encontram abaixo dividos em suas devidas categorias:
 \`\`\`
 \`💡\` __Bot:__(\`7\`)
-\`sobre\`・\`help\`・\`botinfo\`・\`ping\`・\`setprefixo\`・\`status\`・\`versão\`
+\`sobre\`・\`help\`・\`ping\`・\`setprefixo\`・\`status\`・\`versão\`
 
 \`📝\` __Utilidades:__(\`4\`)
-\`afk\`・\`avatar\`・\`commandinfo\`・\`serverinfo\`
-}
-{color: $getVar[color]}
-{footer: © 2021-2022 Quiz Api. Todos os direitos reservados.:$userAvatar[$clientID]};yes]
+\`avatar\`・\`commandinfo\`・\`serverinfo\`]
+$color[1;$getVar[color]]
+$footer[1;© 2021-2022 Quiz Api. Todos os direitos reservados.;$userAvatar[$clientID]]
 
-$onlyIf[$getGlobalUserVar[bl;$authorID]==no;<@$authorID>{color:$getVar[color]}{description::no_entry_sign: » Blacklist
-<:mt_ar:912044933626626088>╰ <@$authorID>, Você está na minha Blacklist e não pode executar meus comandos!}{delete:15s}]
-$cooldown[5s;<@$authorID>{color:$getVar[color]}{description::no_entry_sign: » Cooldown
-<:mt_ar:912044933626626088>╰ <@$authorID>, Vai com calma pequeno Einstein. Espere %time% para executar meus comandos!}{delete:15s}]
-    `
+`
 })

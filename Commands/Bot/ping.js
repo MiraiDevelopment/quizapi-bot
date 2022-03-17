@@ -6,15 +6,16 @@ module.exports = {
     usage: "ping",
     aliases: ["ms","latency","latencia","latência"],
     code: `
-$reply[$messageID;:ping_pong: <@$authorID> pong!
-{description: \💡 » Minha Latência é:
-<:mt_ar:912044933626626088>╰ \`$botPingms\`
-\⚡ »  Latência da Gateway:
-<:mt_ar:912044933626626088>╰ \`$djsEval[client.ws.ping;yes]ms\`}{color: $getVar[color]}{footer: Executado por $userTag[$authorID]:$authorAvatar}{timestamp};yes]
+:ping_pong: <@$authorID> pong!
+$description[1;\💡 » Minha Latência é:
+<:mt_ar:912044933626626088>╰ \`$messagePingms\`
+\⚡ » Latência da Gateway:
+<:mt_ar:912044933626626088>╰ \`$djsEval[client.ws.ping;yes]ms\`
+\🌐 » Latência da Database:
+<:mt_ar:912044933626626088>╰ \`$djsEval[client.db.db.ping();yes]ms\`]
+$color[1;$getVar[color]]
+$footer[1;Executado por $userTag[$authorID];$authorAvatar]
+$addTimestamp[1]
 
-$onlyIf[$getGlobalUserVar[bl;$authorID]==no;<@$authorID>{color:$getVar[color]}{description::no_entry_sign: » Blacklist
-<:mt_ar:912044933626626088>╰ <@$authorID>, Você está na minha Blacklist e não pode executar meus comandos!}{delete:15s}]
-$cooldown[5s;<@$authorID>{color:$getVar[color]}{description::no_entry_sign: » Cooldown
-<:mt_ar:912044933626626088>╰ <@$authorID>, Vai com calma pequeno Einstein. Espere %time% para executar meus comandos!}{delete:15s}]
     `
 }

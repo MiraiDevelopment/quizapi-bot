@@ -6,22 +6,22 @@ module.exports = {
     description: "Use para ver as informações dos Comandos.",
     aliases: ["cmdsinfo", "cmdinfo", "cmdinfos", "cmdsinfos"],
     code: `
-$color[$getVar[color]]
-$thumbnail[$userAvatar[$clientID]]
-$author[$userTag[$clientID];$userAvatar[$clientID]]
-$description[:bookmark_tabs: **» Informações do Comando**
+$color[1;$getVar[color]]
+$thumbnail[1;$userAvatar[$clientID]]
+$author[1;$userTag[$clientID];$userAvatar[$clientID]]
+$description[1;:bookmark_tabs: **» Informações do Comando**
 <:mt_ar:912044933626626088>╰ Nome: \`[ $commandInfo[$message;name] ]\`
 <:mt_ar:912044933626626088>╰ Descrição: \`[ $commandInfo[$message;description] ]\`
 <:mt_ar:912044933626626088>╰ Sinônimos: \`[ $replaceText[$commandInfo[$message;aliases];,;, ] ]\`
 <:mt_ar:912044933626626088>╰ Categoria: \`[ $commandInfo[$message;category] ]\`
 <:mt_ar:912044933626626088>╰ Permissões: \`[ $commandInfo[$message;perms] ]\`
 <:mt_ar:912044933626626088>╰ Modo de Uso: \`[ $getServerVar[prefix]$commandInfo[$message;usage] ]\`  ]
-$footer[Argumento Obrigatório <> | Argumento Opicional ();$authorAvatar]
+$footer[1;Argumento Obrigatório <> | Argumento Opicional ();$authorAvatar]
 $onlyIf[$commandInfo[$message;name]!=;{color:$getVar[color]}{description::no_entry_sign: » Erro
     <:mt_ar:912044933626626088>╰ <@$authorID>, Este comando não existe ou foi digitado incorretamente.}]
 $onlyIf[$commandInfo[$message;aliases]!=;{color:$getVar[color]}{description::no_entry_sign: » Erro
     <:mt_ar:912044933626626088>╰ <@$authorID>, Este comando não existe ou foi digitado incorretamente.}]
-$argsCheck[>1;{color:$getVar[color]}{description::no_entry_sign: » Falta de Argumentos
+$onlyIf[!=$message;{color:$getVar[color]}{description::no_entry_sign: » Falta de Argumentos
     <:mt_ar:912044933626626088>╰ <@$authorID>, Você precisa dizer o nome do comando para pegar as informações dele!}]
 $onlyIf[$getGlobalUserVar[bl;$authorID]==no;<@$authorID>{color:$getVar[color]}{description::no_entry_sign: » Blacklist
 <:mt_ar:912044933626626088>╰ <@$authorID>, Você está na minha Blacklist e não pode executar meus comandos!}{delete:15s}]

@@ -1,21 +1,24 @@
+// Configuração para rota Express
 const express = require('express');
-const PORT = 3000
 const app = express();
-app.get("/", (req, res) => {
+app.get('/', (request, response) => {
   const ping = new Date();
   ping.setHours(ping.getHours() - 3);
-  console.log(`Novo ping em: ${ping.getUTCHours()}:${ping.getUTCMinutes()}:${ping.getUTCSeconds()}`);
-  res.sendStatus(200);
+  response.sendStatus(200);
 });
 app.listen(process.env.PORT);
 
+require('dotenv').config()
+
 // Utilização da Aoi.JS
 const Aoijs = require("aoi.js")
+const Discord = require('discord.js')
+const util = require('util')
 
 // Configurando a Database
 const Aoifb = require("aoi.fb")
 
-const firebase = Aoifb.create({
+const firebase = Aoifb.Create({
     apiKey: process.env.apiKey,
     authDomain: process.env.authDomain,
     databaseURL: process.env.databaseURL,
@@ -28,46 +31,52 @@ const firebase = Aoifb.create({
 
 // Configurando o Client da Aoi.js
 const bot = new Aoijs.Bot({
-    mobilePlatform: false,
-    intents: ["GUILDS", "GUILD_MESSAGES"],
-    token: process.env.token,
-    prefix: ["$getServerVar[prefix]", "<@917962601923760139> ", "<@!917962601923760139> "],
-    database: firebase,
-    autoUpdate: false,
-    fetchInvites: false,
-    suppressAllErrors: true,
-    debugs: {
-      interpreter: true
+  	token: process.env.token,
+  	prefix: '$getServerVar[prefix]',
+  	intents: ['GUILDS', 'GUILD_MEMBERS', 'GUILD_MESSAGES', 'GUILD_MESSAGE_REACTIONS', 'GUILD_PRESENCES', 'GUILD_VOICE_STATES'] ,
+  	suppressAllErrors: true,
+  	database: {
+    	type: "aoi.fb",
+    	db: firebase,
     },
-    events: {
-      timeout:true,
-      functionError: true,
-      music: true
-    }
-})
- 
-
-// Configuração
-bot.loadCommands("./Commands");
-bot.onMessage({
-  respondToBots: false,
-  guildOnly: true
+    respondOnEdit:{
+      commands: true
+  	}
 });
 
+
+// Configuração
+const voice = new Aoijs.Voice(bot, {
+  cache: {
+    cacheType: "Memory",
+    enabled: true,
+  },
+youtube: {
+  fetchAuthor:true
+}
+},true);
+
+const loader = new Aoijs.LoadCommands(bot);
+loader.load(bot.cmd, './Commands/', false)
+bot.onInteractionCreate();
+bot.onMessageDelete();
+bot.onMessageUpdate();
+bot.onMessage();
 bot.readyCommand({
     channel: "",
     code: `$log[Ligado no usuário $userTag[$clientID]]`
 })
 
+
 // Status do Bot 
 require('./src/stats')(bot);
 
-// Banco de Dados das Questões
-require('./src/datas')(bot);
+// Variáveis
+require('./src/variables')(bot);
 
-// Sistema de AFK
+// Sistema de AFK (DESLIGADO)
 
-bot.command({
+/* bot.command({
   name: "<@",
   aliases: ["<!@"],
   nonPrefixed: true,
@@ -89,12 +98,9 @@ $if[$getGlobalUserVar[afk;$authorID]==activated]
 $sendMessage[😉・**$username[$authorID]**, seu **modo AFK** foi desativado. Se precisar dar uma saindinha **:3** e ativar de novo peça pra mim usando \`$getServerVar[prefix]afk\`{delete:7s};no]
 $onlyIf[$checkContains[$message[1];afk;off;ausente]==false;]
 $endif`
-})
+}) */
 
-bot.client.questionsCount = 0
-bot.client.questionsCount++
-
-bot.client.getUserBanner = async function getUserBanner(message) {
-    const user = await bot.client.api.users(message).get();
-    return user.banner ? `https://cdn.discordapp.com/banners/${message}/${user.banner}?size=4096` : null;
+function clean(text) {
+    const blankSpace = String.fromCharCode(8203)
+    return typeof text === 'string' ? text.replace(/`/g, '`' + blankSpace).replace(/@/g, '@' + blankSpace) : text
 }
