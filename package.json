@@ -19,7 +19,7 @@
     "@akarui/aoi.music": "git+https://github.com/akaruidevelopment/music.git#main",
     "@discordjs/opus": "0.7.0",
     "@discordjs/voice": "0.8.0",
-    "aoi.fb": "^5.6.0",
+    "aoi.fb": "^5.6.5",
     "aoi.js": "5.1.1",
     "aoi.js-panel": "^1.4.1",
     "axios": "0.24.0",
