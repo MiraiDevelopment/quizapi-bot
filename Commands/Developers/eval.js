@@ -7,7 +7,8 @@ module.exports = [{
   $if: 'v4',
   aliases: ["e", "ev"],
   code: `
-$if[$charCount[$replaceText[$djsEval[$message;yes];$clientToken;hidden]]>2000;]
+$if[$charCount[$replaceText[$djsEval[let client.db = client.db.db
+$message;yes];$clientToken;hidden]]>2000;]
 $clearReactions[$channelID;$getChannelVar[evalMsg];all]
 $createFile[$replaceText[$djsEval[$message;yes];$clientToken;hidden];code.js]
 $addButton[1;;2;eval_$authorID;false;❌]
@@ -16,7 +17,8 @@ $setChannelVar[evalMsg;$messageID]
 $elseIf[$charCount[$replaceText[$djsEval[$message;yes];$clientToken;hidden]]<2000;]
 $clearReactions[$channelID;$getChannelVar[evalMsg];all]
 \`\`\`js
-$replaceText[$djsEval[$message;yes];$clientToken;hidden]
+$replaceText[$djsEval[let client.db = client.db.db
+$message;yes];$clientToken;hidden]
 \`\`\`
 $addButton[1;;2;eval_$authorID;false;❌]
 $setChannelVar[evalMsg;$messageID]
