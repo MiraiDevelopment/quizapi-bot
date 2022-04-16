@@ -9,14 +9,16 @@ module.exports = [{
   code: `
 $if[$charCount[$replaceText[$djsEval[$message;yes];$clientToken;hidden]]>2000;]
 $clearReactions[$channelID;$getChannelVar[evalMsg];all]
-$createFile[$replaceText[$djsEval[$message;yes];$clientToken;hidden];code.js]
+$createFile[$replaceText[$djsEval[let db = client.db.db
+$message;yes];$clientToken;hidden];code.js]
 $addButton[1;;2;eval_$authorID;false;❌]
 $setChannelVar[evalMsg;$messageID]
 
 $elseIf[$charCount[$replaceText[$djsEval[$message;yes];$clientToken;hidden]]<2000;]
 $clearReactions[$channelID;$getChannelVar[evalMsg];all]
 \`\`\`js
-$replaceText[$djsEval[$message;yes];$clientToken;hidden]
+$replaceText[$djsEval[let db = client.db.db
+$message;yes];$clientToken;hidden]
 \`\`\`
 $addButton[1;;2;eval_$authorID;false;❌]
 $setChannelVar[evalMsg;$messageID]
