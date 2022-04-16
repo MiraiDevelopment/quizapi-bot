@@ -4,27 +4,16 @@ module.exports = [{
   category: "Desenvolvedores",
   usage: "eval <code>",
   perms: "Este comando solicita a permissão de Desenvolvedor.",
-  $if: 'v4',
   aliases: ["e", "ev"],
   code: `
-$if[$charCount[$replaceText[$djsEval[$message;yes];$clientToken;hidden]]>2000;]
-$clearReactions[$channelID;$getChannelVar[evalMsg];all]
-$createFile[$replaceText[$djsEval[let db = client.db.db
-$message;yes];$clientToken;hidden];code.js]
-$addButton[1;;2;eval_$authorID;false;❌]
-$setChannelVar[evalMsg;$messageID]
-
-$elseIf[$charCount[$replaceText[$djsEval[$message;yes];$clientToken;hidden]]<2000;]
-$clearReactions[$channelID;$getChannelVar[evalMsg];all]
-\`\`\`js
+$reply[$messageID;no]
+$description[1;\`\`\`js
 $replaceText[$djsEval[let db = client.db.db
-$message;yes];$clientToken;hidden]
-\`\`\`
+$message;yes];$clientToken;hidden]\`\`\`]
+$color[1;#303136]
 $addButton[1;;2;eval_$authorID;false;❌]
 $setChannelVar[evalMsg;$messageID]
 
-$endElseIf
-$endIf
 $onlyIf[!=$message;:no_entry_sign: **» Erro!**
   <:mt_ar:912044933626626088>╰ <@$authorID>, Digite algo para inspecionar.]
 
@@ -37,25 +26,15 @@ $onlyForIDs[424931675009712128;417067105897414667;:no_entry_sign: **» Erro!**
   category: "Desenvolvedores",
   usage: "aoieval <code>",
   perms: "Este comando solicita a permissão de Desenvolvedor.",
-  $if: 'v4',
   aliases: ["aoie", "aoiev"],
   code: `
-$if[$charCount[$replaceText[$eval[$message;yes;no];$clientToken;hidden]]>2000;]
-$clearReactions[$channelID;$getChannelVar[evalMsg];all]
-$createFile[$replaceText[$eval[$message;yes;no];$clientToken;hidden];code.js]
+$reply[$messageID;no]
+$description[1;\`\`\`js
+$replaceText[$eval[$message;yes;no];$clientToken;hidden]\`\`\`]
+$color[1;#303136]
 $addButton[1;;2;eval_$authorID;false;❌]
 $setChannelVar[evalMsg;$messageID]
 
-$elseIf[$charCount[$replaceText[$eval[$message;yes;no];$clientToken;hidden]]<2000;]
-$clearReactions[$channelID;$getChannelVar[evalMsg];all]
-\`\`\`js
-$replaceText[$eval[$message;yes;no];$clientToken;hidden]
-\`\`\`
-$addButton[1;;2;eval_$authorID;false;❌]
-$setChannelVar[evalMsg;$messageID]
-
-$endElseIf
-$endIf
 $onlyIf[!=$message;:no_entry_sign: **» Erro!**
   <:mt_ar:912044933626626088>╰ <@$authorID>, Digite algo para inspecionar.]
 
