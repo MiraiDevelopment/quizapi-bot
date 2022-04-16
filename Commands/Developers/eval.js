@@ -9,7 +9,7 @@ module.exports = [{
 $reply[$messageID;no]
 $description[1;\`\`\`js
 $replaceText[$djsEval[let db = client.db.db
-$message;yes];$clientToken;hidden] \`\`\`]
+$message;yes];$clientToken;hidden]  \`\`\`]
 $color[1;#303136]
 $addButton[1;;2;eval_$authorID;false;❌]
 $setChannelVar[evalMsg;$messageID]
@@ -30,7 +30,7 @@ $onlyForIDs[424931675009712128;417067105897414667;:no_entry_sign: **» Erro!**
   code: `
 $reply[$messageID;no]
 $description[1;\`\`\`js
-$replaceText[$eval[$message;yes;no];$clientToken;hidden] \`\`\`]
+$replaceText[$eval[$message;yes;no];$clientToken;hidden]  \`\`\`]
 $color[1;#303136]
 $addButton[1;;2;eval_$authorID;false;❌]
 $setChannelVar[evalMsg;$messageID]
